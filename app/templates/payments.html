@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control" name="playmentsFilter" id="playmentsFilter" ng-model="Payments.all" ng-options="user.id as user.name for user in Payments.users">
+                <option ng-bind="Payments.all_payments"></option>
+            </select>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Payment amount</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" ng-bind-template="Sum: {{Payments.paymentsSum}}"></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                <tr ng-repeat="payment in Payments.data |paymentsFilter: Payments.all">
+                    <td ng-bind="payment.id"></td>
+                    <td class="table-info">
+                        <a ui-sref=".update({contactId:payment.id})" ng-click="Payments.updateObj=payment" ng-bind-template="{{payment.paymentAmount}}"></a>
+                    </td>
+                    <td class="table-info">
+                        <a ui-sref=".update({contactId:payment.id})" ng-click="Payments.updateObj=payment" ng-bind-template="{{payment.description}}"></a>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+            <a ui-sref=".create" class="btn btn-primary">Create</a>
+        </div>
+        <div class="col-md-6">
+            <div ui-view="create"></div>
+            <div ui-view="update"></div>
+        </div>
+    </div>
+</div>
+
+
+
+

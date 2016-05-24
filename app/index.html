@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-controller="mainCtrl as Main">
+<head>
+    <meta charset="UTF-8">
+    <title>neolent</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <base href="/neolent/app/"/>
+
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+</head>
+<body ng-cloak>
+
+<header>
+   <div ng-include="'templates/main-nav.html'"></div>
+</header>
+
+
+<div ui-view></div>
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+<script src="logic/app.js"></script>
+<script src="logic/mainCtrl.js"></script>
+<script src="logic/controllers/paymentsCtrl.js"></script>
+<script src="logic/controllers/usersCtrl.js"></script>
+<script src="logic/services/serviceUser.js"></script>
+<script src="logic/filters/filters.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<form class="myForm" name="updateForm" novalidate>
+    <h3>UPDATE PAYMENT</h3>
+    <div class="form-group">
+        <label for="paymentAmount">Payment amount</label>
+        <input name="paymentAmount" type="text" class="form-control" id="paymentAmount" ng-model="Payments.updateObj.paymentAmount" ng-pattern="/^\-?\d+(\.\d{0,})?$/" required>
+        <span ng-show="updateForm.paymentAmount.$error.pattern">Incorrect data!</span>
+        <span ng-show="updateForm.paymentAmount.$error.required">This field is required!</span>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input name="description" type="text" class="form-control" id="description" ng-model="Payments.updateObj.description" ng-pattern="/^[a-zA-Zа-яА-Я\-_ \s]+$/" required>
+        <span ng-show="updateForm.description.$error.pattern">Incorrect data!</span>
+        <span ng-show="updateForm.description.$error.required" class="help-block">This field is required!</span>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="Payments.updatePayment(Payments.updateObj.id);Payments.updateObj = {}; Payments.checked=!Payments.checked;"  ng-disabled="updateForm.$invalid">Update</button>
+</form>

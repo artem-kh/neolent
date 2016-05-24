@@ -1,0 +1,47 @@
+.main-nav{
+    margin: 10px 0 50px 30px;
+}
+.main-nav li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.main-nav li a{
+    display: block;
+    padding: 10px;
+    font: 16px Arial;
+    text-decoration: none;
+}
+
+h3{
+    margin-top: 0;
+}
+
+.active{
+    border-bottom: 1px solid #23527c;
+}
+
+.myForm{
+    width: 300px;
+}
+
+.table{
+    margin-top: 20px;
+}
+
+.table-info{
+    padding: 0 !important;
+}
+
+.table-info a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.table-info a:hover{
+    background-color: #b9def0;
+}
+
+
+
